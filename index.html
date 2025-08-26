@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elipzen – Transparent Vising Card</title>
+  <meta name="description"
+    content="Transparent Visiting Card – Premium print, free design, fast delivery. Order via Messenger or WhatsApp." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Elipzen – Transparent Visiting Card" />
+  <meta property="og:description"
+    content="Premium transparent cards • Free design • Free card holder • Nationwide delivery" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-cover.jpg" />
+  <meta property="og:url" content="https://your-domain.com/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+
+  <style>
+    :root {
+      --bg: #0c0d10;
+      --card: #12141a;
+      --text: #e8eaf0;
+      --muted: #a5adbf;
+      --accent: #5b8cff;
+      /* change to your brand color */
+      --accent-2: #9bffd1;
+      --success: #14b8a6;
+      --warning: #f59e0b;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    .container {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding: 22px 16px 0px 16px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(12, 13, 16, .75);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      /* background: linear-gradient(135deg, var(--accent), #6ee7ff 60%, var(--accent-2)); */
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand h1 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: .3px
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+      transition: .25s ease;
+      cursor: pointer
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, .25)
+    }
+
+    .btn.primary {
+      background: linear-gradient(180deg, var(--accent), #2f66ff);
+      border: none;
+      color: white
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 64px 0 32px;
+      overflow: hidden
+    }
+
+    .hero .grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .hero h2 {
+      font-size: 38px;
+      line-height: 1.1;
+      margin: 0 0 12px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(91, 140, 255, .14);
+      border: 1px solid rgba(91, 140, 255, .35);
+      color: #dbe5ff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 14px
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0 0 20px
+    }
+
+    .heroCard {
+      background: radial-gradient(1200px 500px at 20% -10%, rgba(91, 140, 255, .18), transparent 60%), radial-gradient(800px 500px at 120% 20%, rgba(155, 255, 209, .15), transparent 50%), var(--card);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow)
+    }
+
+    .hero .cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .floating {
+      position: absolute;
+      inset: auto -80px -160px auto;
+      opacity: .65;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, .35))
+    }
+
+    /* Samples */
+    section {
+      padding: 42px 0
+    }
+
+    .sec-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px
+    }
+
+    .sec-title h3 {
+      margin: 0;
+      font-size: 24px
+    }
+
+    .grid-samples {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      overflow: hidden
+    }
+
+    .card .img {
+      aspect-ratio: 4/3;
+      background: #0f1116 url('images/sample1.jpg') center/cover no-repeat
+    }
+
+    .card:nth-child(2) .img {
+      background-image: url('images/sample2.jpg')
+    }
+
+    .card:nth-child(3) .img {
+      background-image: url('images/sample3.jpg')
+    }
+
+    .card:nth-child(4) .img {
+      background-image: url('images/sample4.jpg')
+    }
+
+    .card:nth-child(5) .img {
+      background-image: url('images/sample5.jpg')
+    }
+
+    .card:nth-child(6) .img {
+      background-image: url('images/sample6.jpg')
+    }
+
+    .card .body {
+      padding: 12px 12px 14px
+    }
+
+    .card .body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px
+    }
+
+    .feat {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      padding: 14px
+    }
+
+    .feat h4 {
+      margin: 8px 0 4px;
+      font-size: 15px
+    }
+
+    .feat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .feat svg {
+      opacity: .9
+    }
+
+    /* Reviews */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .review {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      padding: 16px
+    }
+
+    .stars {
+      letter-spacing: 1px;
+    }
+
+    /* Screenshot reviews styling */
+    .reviews.screenshots {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .shot {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+    }
+
+    .shot img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      box-shadow: var(--shadow);
+    }
+
+    .shot figcaption {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .shot img{
+      
+      height: 100%;
+      width: 100%;
+    }
+
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .step b {
+      display: block;
+      margin: 8px 0 6px;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    details {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    details[open] {
+      border-color: rgba(255, 255, 255, .18);
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .subtle {
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .hero .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-samples {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .reviews {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .floating {
+        display: none;
+      }
+
+      .reviews.screenshots {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    @media (max-width: 560px) {
+      .grid-samples {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .reviews {
+        grid-template-columns: 1fr;
+        gap: 0px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Optional: Meta Pixel (Facebook) -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+  -->
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><img src="white-png.png" height="100%" width="auto" alt=""></div>
+        <h1>Elipzen</h1>
+      </div>
+      <div class="actions">
+        <a class="btn" href="#samples">Samples</a>
+        <a class="btn" href="#reviews">Reviews</a>
+        <!-- <a class="btn primary" id="ctaTop" href="https://m.me/yourpage" target="_blank" rel="noopener">Order</a> -->
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container grid">
+      <div>
+        <!-- <div class="badge">We Are Selling Smart Cards – Because you deserve it.</div> -->
+        <h2>কার্ড আপনার কিন্তু দায়িত্ব আমাদের ✨</h2>
+        <p>Premium Transparent Cards (300 GSM) • Unlimited Customized Design •  Free Card Holder
+        </p>
+        <div class="cta">
+          <a class="btn primary" id="ctaHero1" href="https://www.facebook.com/profile.php?id=61579852074158" target="_blank" rel="noopener">Messenger</a>
+          <a class="btn" id="ctaHero2" href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <div class="heroCard">
+          <!-- Replace this image with your best transparent card mockup -->
+          <img src="images/hero-card.jpg" alt="Transparent Visiting card mockup" />
+        </div>
+      </div>
+    </div>
+    <img class="floating" src="images/floating-card.png" alt="" />
+  </section>
+
+  <section id="samples">
+    <div class="container">
+      <div class="sec-title">
+        <h3>Printed Samples</h3>
+        <a class="btn" href="https://www.facebook.com/profile.php?id=61579852074158">Order Now</a>
+      </div>
+      <div class="grid-samples">
+        <div class="card">
+          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="body">
+            <p>Metallic print + UV spot</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="body">
+            <p>Minimal classic layout</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="body">
+            <p>Logo focused, clean edges</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="body">
+            <p>Bold typography look</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="body">
+            <p>Round corner finish</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="body">
+            <p>Premium matte texture</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-title">
+        <h3>Why Choose Elipzen</h3>
+      </div>
+      <div class="features">
+        <div class="feat">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3l3.09 6.26L22 10.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 15.14l-5-4.87 6.91-1.01L12 3z"
+              stroke="currentColor" />
+          </svg>
+          <h4>Premium 300 GSM</h4>
+          <p>স্ট্যান্ডার্ড থিকনেস, ১০০% Waterproof</p>
+        </div>
+<div class="feat">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+    <path d="M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"
+          stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+    <path d="M3 12h18M4.5 8.5c5 2 10 2 15 0M4.5 15.5c5-2 10-2 15 0"
+          stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  </svg>
+  <h4>Unlimited Design</h4>
+  <p>পৃথিবীর যেকোনো ডিজাইন Customize ✨</p>
+</div>
+
+        <div class="feat">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" />
+          </svg>
+          <h4>Free Design</h4>
+          <p>অফার চলাকালীন ডিজাইন সম্পূর্ণ ফ্রি 🎨</p>
+        </div>
+        <div class="feat">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12l2-2 4 4 10-10 2 2-12 12-6-6z" stroke="currentColor" stroke-width="2" />
+          </svg>
+          <h4>Free Card Holder</h4>
+          <p>অফারের সাথে ফ্রি হোল্ডার 🎁</p>
+        </div>
+        <!-- <div class="feat">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 7h11l1.4 3H21v7a2 2 0 0 1-2 2H7a4 4 0 0 1-4-4V7z" stroke="currentColor" />
+          </svg>
+          <h4>Nationwide Delivery</h4>
+          <p>ঢাকা 100৳ • বাইরে 150৳</p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container">
+      <div class="sec-title">
+        <h3>Customer Reviews</h3>
+      </div>
+      <!-- Screenshot-based review grid: replace images below with your own -->
+      <div class="reviews screenshots">
+        <div class="shot">
+          <img src="ss.png" height="100%" width="400px" alt="Customer review screenshot 1">
+          <figcaption> “ডিজাইন & সার্ভিস দারুণ!”</figcaption>
+        </div>
+        <div class="shot">
+          <img src="ss.png" alt="Customer review screenshot 2">
+          <figcaption> “প্রিন্ট কোয়ালিটি একদম প্রিমিয়াম।”</figcaption>
+        </div>
+        <div class="shot">
+          <img src="ss.png" alt="Customer review screenshot 3">
+          <figcaption> “অন-টাইম ডেলিভারি, Highly recommended!”</figcaption>
+        </div>
+        <div class="shot">
+          <img src="ss.png" alt="Customer review screenshot 4">
+          <figcaption> “Transparent finish অসাধারণ ✨”</figcaption>
+        </div>
+        <div class="shot">
+          <img src="ss.png" alt="Customer review screenshot 5">
+          <figcaption> “ফ্রি ডিজাইন সাপোর্ট বেশ হেল্পফুল।”</figcaption>
+        </div>
+        <div class="shot">
+          <img src="ss.png" alt="Customer review screenshot 6">
+          <figcaption> “বাজেট ফ্রেন্ডলি & প্রিমিয়াম লুক।”</figcaption>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-title">
+        <h3>How It Works</h3>
+      </div>
+      <div class="steps">
+        <div class="step"><span>①</span><b>Share Card Details</b><span>আপনার নাম, লোগো, তথ্য দিন</span></div>
+        <div class="step"><span>②</span><b>Free Design</b><span>আপনার মনের মতো ডিজাইন</span></div>
+        <div class="step"><span>③</span><b>Print</b><span>ফাইনাল অ্যাপ্রুভালের পর প্রিন্ট</span></div>
+        <div class="step"><span>④</span><b>Deliver</b><span>সারা দেশে হোম ডেলিভারি</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="sec-title">
+        <h3>FAQ</h3>
+      </div>
+      <details>
+        <summary>দাম কতো?</summary>
+        <div class="subtle">অর্ডারের পরিমাণ/ডিজাইন অনুযায়ী শেয়ার করা হবে।</div>
+      </details>
+      <!-- <details>
+        <summary>অ্যাডভান্স লাগবে?</summary>
+        <div class="subtle">ডিজাইন ফাইনাল হলে ৫০% অ্যাডভান্স, বাকিটা Cash On Delivery।</div>
+      </details> -->
+      <details>
+        <summary>ডেলিভারি চার্জ?</summary>
+        <div class="subtle">ঢাকার মধ্যে 100৳ & বাইরে 150৳</div>
+      </details>
+      <!-- <details>
+        <summary>লিড টাইম (কত দিনে পাবো)?</summary>
+        <div class="subtle">সাধারণত ৫–৭ কার্যদিবস। জরুরি হলে আগেই জানিয়ে দিন।</div>
+      </details> -->
+      <details>
+        <summary>ডিজাইন কে করবে?</summary>
+        <div class="subtle">আমাদের প্রফেশনাল গ্রাফিক্স ডিসাইনার টিম দ্বারা Unlimited Customized ডিসাইন করা হয়</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="container" style="text-align:center">
+      <h3 style="margin:0 0 10px">Order Now</h3>
+      <p class="subtle" style="margin:0 0 16px">অফারটি সীমিত সময়ের জন্য। এখনই যোগাযোগ করুন।</p>
+      <div class="cta">
+        <a class="btn primary" id="ctaBottom1" href="https://www.facebook.com/profile.php?id=61579852074158" target="_blank" rel="noopener">Messenger</a>
+        <a class="btn" id="ctaBottom2" href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="brand">
+        <!-- <div class="logo" aria-hidden="true"></div> -->
+        <img src="white-png.png" height="50px" width="auto" alt="">
+        <div>
+          <div style="font-weight:700">Elipzen</div>
+          <div class="subtle">We are selling smart Cards – Because you deserve it.</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="subtle">© <span id="year"></span> Elipzen. All rights reserved.</div>
+        <div class="subtle">Follow us: <a href="https://www.facebook.com/profile.php?id=61579852074158" target="_blank"
+            rel="noopener">Facebook</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+        }
+      })
+    })
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Optional: track CTA clicks with Pixel if available
+    const ctas = ['ctaTop', 'ctaHero1', 'ctaHero2', 'ctaBottom1', 'ctaBottom2'];
+    ctas.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('click', () => {
+        if (window.fbq) { fbq('trackCustom', 'CTA_Click', { id }); }
+      });
+    });
+  </script>
+</body>
+
+</html>
