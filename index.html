@@ -317,7 +317,7 @@
 
     /* Screenshot reviews styling */
     .reviews.screenshots {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .shot {
@@ -414,6 +414,13 @@
       font-size: 14px;
     }
 
+#vid-div{
+  display: grid;
+  grid-template-columns:
+  repeat(2, 1fr);
+  gap: 14px;
+}
+    
     /* Responsive */
     @media (max-width: 920px) {
       .hero .grid {
@@ -445,7 +452,7 @@
       }
 
       .reviews.screenshots {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
     }
     }
 
@@ -470,7 +477,15 @@
       .hero h2 {
         font-size: 30px;
       }
-    }
+      #vid-div{
+      display: block;
+      }
+      #vid-2{
+        display: none !important;
+      }
+
+}
+    
   </style>
 </head>
 
@@ -491,7 +506,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"><img src="white-png.png" height="100%" width="auto" alt=""></div>
+        <div class="logo" aria-hidden="true"><img src="images/white-png.png" height="100%" width="auto" alt="""></div>
         <h1>Elipzen</h1>
       </div>
       <div class="actions">
@@ -510,59 +525,78 @@
         <p>Premium Transparent Cards (300 GSM) • Unlimited Customized Design •  Free Card Holder
         </p>
         <div class="cta">
-          <a class="btn primary" id="ctaHero1" href="https://www.facebook.com/profile.php?id=61579852074158" target="_blank" rel="noopener">Messenger</a>
+          <a class="btn primary" id="ctaHero1" href="https://www.facebook.com/elipzen" target="_blank" rel="noopener">Messenger</a>
           <a class="btn" id="ctaHero2" href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
       <div>
         <div class="heroCard">
           <!-- Replace this image with your best transparent card mockup -->
-          <img src="images/hero-card.jpg" alt="Transparent Visiting card mockup" />
+          <img src="images/Elip-card-mock.jpg" style="border-radius: var(--radius)"; alt="Transparent Visiting card mockup" />
+          <!-- <img src="images/enhanced-card.png" alt="Transparent Visiting card mockup" /> -->
         </div>
       </div>
     </div>
-    <img class="floating" src="images/floating-card.png" alt="" />
+    <!-- <img class="floating" src="images/el" alt="" /> -->
+  </section>
+
+   <section id="promo-video" class="container" style="padding: 20px; ;">
+    <h2>See The Quality</h2>
+    <div id="vid-div">
+    <video autoplay loop muted playsinline width="100%" style="max-width:550px; display:block; margin:20px auto; border-radius:12px;">
+      <source src="images/web.mp4" type="video/mp4" />
+    <!-- <video autoplay loop muted playsinline width="100%" style="max-width:800px; display:block; margin:20px auto; border-radius:12px;">
+      <source src="images/vid01-web.mp4" type="video/mp4" /> -->
+      Your browser does not support the video tag.
+    </video>
+    <video id="vid-2" autoplay loop muted playsinline width="100%" style="max-width:550px; display:block; margin:20px auto; border-radius:12px;">
+      <source src="images/web.mp4" type="video/mp4" />
+    <!-- <video autoplay loop muted playsinline width="100%" style="max-width:800px; display:block; margin:20px auto; border-radius:12px;">
+      <source src="images/vid01-web.mp4" type="video/mp4" /> -->
+      Your browser does not support the video tag.
+    </video>
+    </div>
   </section>
 
   <section id="samples">
     <div class="container">
       <div class="sec-title">
         <h3>Printed Samples</h3>
-        <a class="btn" href="https://www.facebook.com/profile.php?id=61579852074158">Order Now</a>
+        <a class="btn" href="https://www.facebook.com/elipzen">Order Now</a>
       </div>
       <div class="grid-samples">
         <div class="card">
-          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="img"><img src="images/img1.jpg" height="100%" width="100%" alt="card.jpg"></div>
           <div class="body">
             <p>Metallic print + UV spot</p>
           </div>
         </div>
         <div class="card">
-          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="img"><img src="images/img2.png" height="100%" width="100%" alt="card.jpg"></div>
           <div class="body">
             <p>Minimal classic layout</p>
           </div>
         </div>
         <div class="card">
-          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="img"><img src="images/img3-ilham.png" height="100%" width="100%" alt="card.jpg"></div>
           <div class="body">
             <p>Logo focused, clean edges</p>
           </div>
         </div>
         <div class="card">
-          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="img"><img src="images/img4.jpg" height="100%" width="100%" alt="card.jpg"></div>
           <div class="body">
             <p>Bold typography look</p>
           </div>
         </div>
         <div class="card">
-          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="img"><img src="images/img5.jpg" height="100%" width="100%" alt="card.jpg"></div>
           <div class="body">
             <p>Round corner finish</p>
           </div>
         </div>
         <div class="card">
-          <div class="img"><img src="235x315.jpg" height="100%" width="100%" alt="card.jpg"></div>
+          <div class="img"><img src="images/img6.jpg" height="100%" width="100%" alt="card.jpg"></div>
           <div class="body">
             <p>Premium matte texture</p>
           </div>
@@ -631,29 +665,29 @@
       <!-- Screenshot-based review grid: replace images below with your own -->
       <div class="reviews screenshots">
         <div class="shot">
-          <img src="ss.png" height="100%" width="400px" alt="Customer review screenshot 1">
-          <figcaption> “ডিজাইন & সার্ভিস দারুণ!”</figcaption>
+          <img src="images/re-1.jpg" height="100%" width="400px" alt="Customer review screenshot 1">
+          <!-- <figcaption> “ডিজাইন & সার্ভিস দারুণ!”</figcaption> -->
         </div>
         <div class="shot">
-          <img src="ss.png" alt="Customer review screenshot 2">
-          <figcaption> “প্রিন্ট কোয়ালিটি একদম প্রিমিয়াম।”</figcaption>
+          <img src="images/re-2.jpg" alt="Customer review screenshot 2">
+          <!-- <figcaption> “প্রিন্ট কোয়ালিটি একদম প্রিমিয়াম।”</figcaption> -->
         </div>
         <div class="shot">
-          <img src="ss.png" alt="Customer review screenshot 3">
-          <figcaption> “অন-টাইম ডেলিভারি, Highly recommended!”</figcaption>
+          <img src="images/re-3.jpg" alt="Customer review screenshot 3">
+          <!-- <figcaption> “অন-টাইম ডেলিভারি, Highly recommended!”</figcaption> -->
         </div>
         <div class="shot">
-          <img src="ss.png" alt="Customer review screenshot 4">
-          <figcaption> “Transparent finish অসাধারণ ✨”</figcaption>
+          <img src="images/re-4.jpg" alt="Customer review screenshot 4">
+          <figcaption>Inbox us for thousands of reviews!</figcaption>
         </div>
-        <div class="shot">
+        <!-- <div class="shot">
           <img src="ss.png" alt="Customer review screenshot 5">
           <figcaption> “ফ্রি ডিজাইন সাপোর্ট বেশ হেল্পফুল।”</figcaption>
         </div>
         <div class="shot">
           <img src="ss.png" alt="Customer review screenshot 6">
           <figcaption> “বাজেট ফ্রেন্ডলি & প্রিমিয়াম লুক।”</figcaption>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -679,7 +713,7 @@
       </div>
       <details>
         <summary>দাম কতো?</summary>
-        <div class="subtle">অর্ডারের পরিমাণ/ডিজাইন অনুযায়ী শেয়ার করা হবে।</div>
+        <div class="subtle">অর্ডারের পরিমাণ অনুযায়ী শেয়ার করা হবে।</div>
       </details>
       <!-- <details>
         <summary>অ্যাডভান্স লাগবে?</summary>
@@ -695,7 +729,7 @@
       </details> -->
       <details>
         <summary>ডিজাইন কে করবে?</summary>
-        <div class="subtle">আমাদের প্রফেশনাল গ্রাফিক্স ডিসাইনার টিম দ্বারা Unlimited Customized ডিসাইন করা হয়</div>
+        <div class="subtle">আমাদের প্রফেশনাল গ্রাফিক্স ডিসাইনার টিম দ্বারা Unlimited Customizable ডিসাইন করা হবে</div>
       </details>
     </div>
   </section>
@@ -703,10 +737,10 @@
   <section id="order">
     <div class="container" style="text-align:center">
       <h3 style="margin:0 0 10px">Order Now</h3>
-      <p class="subtle" style="margin:0 0 16px">অফারটি সীমিত সময়ের জন্য। এখনই যোগাযোগ করুন।</p>
+      <p class="subtle" style="margin:0 0 16px">অফারটি সীমিত সময়ের জন্য। এখনই যোগাযোগ করুন। <a href="tel:+8801401757447">01401757447</a> </p>
       <div class="cta">
-        <a class="btn primary" id="ctaBottom1" href="https://www.facebook.com/profile.php?id=61579852074158" target="_blank" rel="noopener">Messenger</a>
-        <a class="btn" id="ctaBottom2" href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn primary" id="ctaBottom1" href="https://www.facebook.com/elipzen" target="_blank" rel="noopener">Messenger</a>
+        <a class="btn" id="ctaBottom2" href="https://wa.me/+8801401757447" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </section>
@@ -715,7 +749,7 @@
     <div class="container footer-grid">
       <div class="brand">
         <!-- <div class="logo" aria-hidden="true"></div> -->
-        <img src="white-png.png" height="50px" width="auto" alt="">
+        <img src="images/white-png.png" height="50px" width="auto" alt="">
         <div>
           <div style="font-weight:700">Elipzen</div>
           <div class="subtle">We are selling smart Cards – Because you deserve it.</div>
@@ -723,7 +757,7 @@
       </div>
       <div style="text-align:right">
         <div class="subtle">© <span id="year"></span> Elipzen. All rights reserved.</div>
-        <div class="subtle">Follow us: <a href="https://www.facebook.com/profile.php?id=61579852074158" target="_blank"
+        <div class="subtle">Follow us: <a href="https://www.facebook.com/elipzen" target="_blank"
             rel="noopener">Facebook</a></div>
       </div>
     </div>
