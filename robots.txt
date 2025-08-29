@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elipzen.netlify.app/sitemap.xml
